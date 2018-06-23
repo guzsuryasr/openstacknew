@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Sistem Terdistribusi</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="home.html">Home</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="logout.php">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Sistem Terdistribusi</h3>
+        </div>
+        <div class="jumbotron">
+            <img src="image/template1/1.jpg"  name="slide">
+            <h4>Create Your Website</h4>
+            <p class="lead"></p>
+            <button type="button" class="btn btn-primary" id="create_vm" onclick="create_vm()">CREATE</button>
+        </div>
+        <h4>Another Template</h4>
+        <div style="text-align:center">
+          <table style="width:100%">
+            <tr>
+              <td id="1" onClick="gerak(this.id)"><img src="template/template1.jpg">Template 1</td>
+              <td id="2" onClick="gerak(this.id)"><img src="template/template2.jpg">Template 2</td>
+              <td id="3" onClick="gerak(this.id)"><img src="template/template3.jpg">Template 3</td>
+            </tr>
+          </table>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br>
+    <footer style="text-align:center">
+      <p>Posted by: Clay Team</p>
+      <p>Contact information: <a href="mailto:kupingceleng@clay.com">
+      kupingceleng@clay.com</a>.</p>
+    </footer>
+
+    <script src="static/js/ajax.js"></script>
+    <script src="static/js/jquery-1.11.2.js"></script>
+    <script>
+      //instance
+      var template1 = [
+        new Image(),
+        new Image(),
+        new Image()
+      ],
+      template2 = [
+        new Image(),
+        new Image(),
+        new Image()
+      ],
+      template3 = [
+        new Image(),
+        new Image(),
+        new Image()
+      ];
+
+      //template1
+      template1[0].src = "image/template1/1.jpg";
+      template1[1].src = "image/template1/2.jpg";
+      template1[2].src = "image/template1/3.jpg";
+
+      //template2
+      template2[0].src = "image/template2/1.jpg";
+      template2[1].src = "image/template2/2.jpg";
+      template2[2].src = "image/template2/3.jpg";
+
+      //template3
+      template3[0].src = "image/template3/1.jpg";
+      template3[1].src = "image/template3/2.jpg";
+      template3[2].src = "image/template3/3.jpg";
+
+      console.log(template1[1]);
+      var step=0;
+      var time;
+
+      function image(temp = 1){
+        /*if(!document.images)
+          return*/
+          document.images.slide.src = eval("template"+temp+"["+step+"].src");
+          step++;
+
+          if(step==3){
+              step=0;
+          }
+          console.log(step);
+          time = setTimeout("image()", 2000);
+      }
+
+      function gerak(temp){
+        clearTimeout(time);
+        step = 0;
+        image(temp);
+      }
+
+      gerak(1);
+      </script>
+</body>
+</html>

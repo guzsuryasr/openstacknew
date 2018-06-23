@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/css/style.css" rel="stylesheet">
+    <title>Sistem Terdistribusi</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <!--<script>
+
+    var image1 = new Image();
+    image1.src = "image/template1/1.jpg";
+
+    var image2 = new Image();
+    image2.src = "image/template1/2.jpg";
+
+    var image3 = new Image();
+    image3.src = "image/template1/3.jpg";
+
+    </script>-->
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="logout.php">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Sistem Terdistribusi</h3>
+        </div>
+      <form action= "http://localhost:5028/create" method="post">
+        <div class="jumbotron">
+            <!--<img src="image/template1/1.jpg" width="250" name="slide">-->
+            <h4>Create Your Website</h4>
+            <p class="lead"></p>
+            <p> <input type = "text" name = "nm" placeholder="Input your name" /> </p>
+            <button type="submit" class="btn btn-primary" id="create_vm" onclick="create_vm()">CREATE</button>
+        </div>
+      </form>
+      <!--<script>
+      var step=1;
+      function gerak(){
+        if(!document.images)
+        return
+        document.images.slide.src = eval("image"+step+".src");
+        if(step<3)
+        step++;
+        else
+        step=1;
+        setTimeout("gerak()",2000);
+      }
+      gerak();
+      </script>-->
+
+
+    </div>
+    <script src="static/js/ajax.js"></script>
+    <script src="static/js/jquery-1.11.2.js"></script>
+</body>
+</html>

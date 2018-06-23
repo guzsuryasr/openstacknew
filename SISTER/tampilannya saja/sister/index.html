@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sistem Terdistribusi</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+
+</head>
+
+<body onLoad="document.login.username.focus();" style="padding-top:100px;padding-bottom:100px;">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-7 col-md-offset-4">
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><strong> Info!</strong> Untuk dapat mengakses web sister ini diwajibkan untuk Login terlebih dahulu.
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <center><h3><span class="glyphicon glyphicon-user"></span>Login</h3></center>
+            </div>
+            <div class="panel-body">
+              <form  name="login" action="cek_login.php" method="POST" onSubmit="return validasi(this)" class="form-3" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="username">Username :</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="username" placeholder="Username" title="Username" >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password :</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                    <input type="password" class="form-control" name="password" placeholder="Password" title="Password">
+                  </div>
+                </div>
+                <div class="panel-footer">
+                  <button type="submit" name="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</button>
+                  <div class="pull-right">
+                    <button type="reset" name="reset" class="btn btn-danger"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Reset</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </body>
+</html>

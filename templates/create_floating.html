@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/css/style.css" rel="stylesheet">
+    <title>Sistem Terdistribusi</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <!--<script>
+
+    var image1 = new Image();
+    image1.src = "image/template1/1.jpg";
+
+    var image2 = new Image();
+    image2.src = "image/template1/2.jpg";
+
+    var image3 = new Image();
+    image3.src = "image/template1/3.jpg";
+
+    </script>-->
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="home.html">Home</a>
+                    </li>
+                    <li role="presentation" class="active"><a href="logout.php">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Sistem Terdistribusi</h3>
+        </div>
+        <div style="text-align: center;">
+            <form action= "http://localhost:5028/get_id" method="post">
+                <h4> List Server </h4>
+                <ul>
+                {% for data in json_data['servers/{server_id}'] %}
+                   <li><h2>{{ data.server }}</h2></li>
+                   <li><h2>{{ data.name }}</h2></li>
+                   <li><h2>{{ data.accessIPv4 }}</h2></li>
+                   <li><h2>{{ data.created }}</h2></li>
+                   <li><h2>{{ data.flavor }}</h2></li>
+                   <li><h2>{{ data.image }}</h2></li>
+                   <li><h2>{{ data.key_name }}</h2></li>
+                   <li><h2>{{ data.links }}</h2></li>
+                   <li><h2>{{ data.metadata }}</h2></li>
+                   <li><h2>{{ data.config_drive }}</h2></li>
+                {% endfor %}
+
+                </ul>
+            </form>        
+
+        </div>
+
+        
+      <!--<script>
+      var step=1;
+      function gerak(){
+        if(!document.images)
+        return
+        document.images.slide.src = eval("image"+step+".src");
+        if(step<3)
+        step++;
+        else
+        step=1;
+        setTimeout("gerak()",2000);
+      }
+      gerak();
+      </script>-->
+
+
+    </div>
+    <script src="static/js/ajax.js"></script>
+    <script src="static/js/jquery-1.11.2.js"></script>
+</body>
+</html>
